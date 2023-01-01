@@ -1,0 +1,12 @@
+<div class="items">
+    <div *ngFor="let item of items; let i = index;" class="item">
+        <div class="item-image">{{item.images[0]}}</div>
+        <div class="item-data">
+            <div class="item-title">{{item.title}}</div>
+            <div class="item-price">{{item.prices[item.prices.length - 1]}} ETH</div>
+            <div class="item-shipping">+ {{item.shipping[item.shipping.length -1]}} ETH shipping estimate</div>
+            <div class="item-location">from Spain</div>
+            <div class="item-sold">{{item.sold}}</div>
+        </div>
+    </div>
+</div>
