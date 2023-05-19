@@ -1,5 +1,5 @@
 <div class="items">
-    <div *ngFor="let item of items; let i = index;" class="item">
+    <div *ngFor="let item of items; let i = index;" class="item" (click)="selectItem(item.UID)">
         <div class="item-image">{{item.images[0]}}</div>
         <div class="item-data">
             <div class="item-title">{{item.title}}</div>

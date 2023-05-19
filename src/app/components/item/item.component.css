@@ -1,0 +1,180 @@
+.item-container {
+    display: flex;
+    margin: 20px 20px 0px 20px;
+}
+
+.photos-container {
+    display: flex;
+}
+
+.photos-container .side {
+    display: flex;
+    flex-direction: column;
+}
+
+.photos-container .side div {
+    margin: 10px 0;
+}
+
+.photos-container .side div:first-child {
+    margin-top: 0px;
+}
+
+.photos-container .main {
+    height: 300px;
+    width: 300px;
+    margin: 0 20px;
+}
+
+.description-container {
+    flex: 0 0 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.description-container .divider {
+    margin: 20px 0;
+    color: rgba(201, 201, 201, 0.8);
+}
+
+.description-container .title {
+    font-weight: 700;
+}
+
+.description-container .condition {
+    display: flex;
+    gap: 10px;
+}
+
+.description-container .condition .description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.description-container .condition .title {
+    width: 90px;
+    text-align: right;
+    font-weight: normal;
+}
+
+.description-container .condition .description .options {
+    font-style: italic;
+}
+
+.description-container .condition .label {
+    font-weight: 700;
+}
+
+.description-container .quantity {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.description-container .quantity .title {
+    width: 90px;
+    text-align: right;
+    font-weight: normal;
+}
+
+.description-container .quantity mat-form-field {
+    width: 45px;
+}
+
+::ng-deep mat-form-field .mat-mdc-text-field-wrapper {
+    padding: 10px;
+}
+
+::ng-deep mat-form-field .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+}
+
+.description-container .price {
+    display: flex;
+    gap: 10px;
+}
+
+.description-container .price .title {
+    width: 90px;
+    text-align: right;
+    font-weight: normal;
+}
+
+.description-container .price .label .info {
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    gap: 5px;
+}
+
+.description-container .buy {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.description-container .buy button {
+    width: 100%;
+}
+
+.description-container .cart {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.description-container .cart button {
+    width: 100%;
+}
+
+.description-container .shipping {
+    display: flex;
+    gap: 10px;
+}
+
+.description-container .shipping .title {
+    width: 90px;
+    text-align: right;
+    font-weight: normal;
+}
+
+.description-container .shipping .label .location {
+    margin-top: 5px;
+    font-size: .75rem;
+    color: #707070;
+}
+
+.description-container .delivery {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.description-container .delivery .title {
+    width: 90px;
+    text-align: right;
+    font-weight: normal;
+}
+
+.description-container .returns {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.description-container .returns .title {
+    width: 90px;
+    text-align: right;
+    font-weight: normal;
+}
+
+.item-container .extra {
+    margin: 0 20px;
+}
+
+.info-container {
+    margin-top: 60px;
+}

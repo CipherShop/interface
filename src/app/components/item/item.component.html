@@ -1,0 +1,103 @@
+<div class="item-container">
+    <div class="photos-container">
+        <div class="side">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="main">
+            <img [src]="selectedImage">
+        </div>
+    </div>
+    <div class="description-container">
+        <div class="title">{{item?.title}}</div>
+        <div class="divider">
+            <mat-divider></mat-divider>
+        </div>
+        <div class="condition">
+            <div class="title">Condition:</div>
+            <div class="description">
+                <div *ngIf="item?.condition === 1" class="label">New</div>
+                <div *ngIf="item?.condition === 2" class="label">Used</div>
+                <div *ngIf="item?.condition === 3" class="label">Old</div>
+                <div class="options">“{{item?.description}}”</div>
+            </div>
+        </div>
+        <div class="quantity">
+            <div class="title">Quantity:</div>
+            <form>
+                <mat-form-field appearance="outline">
+                    <input matInput value="1">
+                </mat-form-field>
+            </form>              
+        </div>
+        <div class="divider">
+            <mat-divider></mat-divider>
+        </div>
+        <div *ngIf="item" class="price">
+            <div class="title">Price:</div>
+            <div class="label">
+                <div class="info">
+                    <div>{{item!.prices[item!.prices.length - 1]}}</div>
+                    <div *ngIf="!item?.isErc20Price">ETH</div>
+                    <div *ngIf="!item?.isErc20Price">ETH-LOGO</div>
+                    <div *ngIf="item?.isErc20Price">GET-ERC20-SYMBOL</div>
+                    <div>ERC20-LINK</div>
+                </div>
+                <div class="buy">
+                    <button mat-raised-button color="primary">Buy</button>
+                </div>
+                <div class="cart">
+                    <button mat-raised-button>Add to cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="divider">
+            <mat-divider></mat-divider>
+        </div>
+        <div class="offer"></div>
+        <div class="watchlist"></div>
+        <div class="shipping">
+            <div class="title">Shipping:</div>
+            <div class="label">
+                <div class="info">
+                    May not ship to Spain.<br>Read item description or contact seller for shipping options.
+                </div>
+                <div class="location">
+                    Located in: {{item?.localization}}
+                </div>
+            </div>
+        </div>
+        <div class="delivery">
+            <div class="title">Delivery:</div>
+            <div class="label">
+                <div class="info">
+                    Varies
+                </div>
+            </div>
+        </div>
+        <div class="returns">
+            <div class="title">Returns:</div>
+            <div class="label">
+                <div class="info">
+                    30 day returns. Buyer pays for return shipping.
+                </div>
+            </div>
+        </div>
+        <div class="payments"></div>
+    </div>
+    <div class="extra">
+        <div class="guarantee">
+            <div class="title">Shop with confidence</div>
+            <div class="description">The money is held by a third-party, in this case, a smart contract, so if you do not get your item, you can get your money back.</div>
+        </div>
+        <div class="seller"></div>
+    </div>
+</div>
+<div class="info-container">
+    <mat-tab-group>
+        <mat-tab label="About this item">About this item</mat-tab>
+        <mat-tab label="Shipping, returns & payments">Content 3</mat-tab>
+        <mat-tab label="Reviews"></mat-tab>
+    </mat-tab-group>
+</div>
