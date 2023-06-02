@@ -20,8 +20,16 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
+    "rehype-external-links": "^2.1.0",
+    "rehype-sanitize": "^5.0.1",
+    "rehype-stringify": "^9.0.3",
+    "remark-gfm": "^3.0.1",
+    "remark-mdx": "^2.3.0",
+    "remark-parse": "^10.0.2",
+    "remark-rehype": "^10.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "unified": "^10.1.2",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {

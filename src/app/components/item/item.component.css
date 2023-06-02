@@ -85,7 +85,7 @@
 }
 
 ::ng-deep mat-form-field .mat-mdc-text-field-wrapper {
-    padding: 10px;
+    padding: 0 10px;
 }
 
 ::ng-deep mat-form-field .mat-mdc-form-field-subscript-wrapper {
@@ -177,4 +177,149 @@
 
 .info-container {
     margin-top: 60px;
+}
+
+.info-container .about {
+    padding: 10px;
+}
+
+.info-container .shipping {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-container .shipping .container {
+    padding: 20px;
+    border: solid 1px #b3b3b3;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-container .shipping .location, .info-container .shipping .shipping, .info-container .shipping .excludes, .info-container .shipping .country {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin-bottom: 10px;
+    gap: 0;
+}
+
+.info-container .shipping .country {
+    align-items: center;
+    gap: 15px;
+}
+
+.info-container .shipping .location .title, .info-container .shipping .shipping .title, .info-container .shipping .excludes .title, .info-container .shipping .country .title {
+    font-size: 16px;
+}
+
+.info-container .shipping .location .content, .info-container .shipping .shipping .content, .info-container .shipping .excludes .content, .info-container .shipping .country .content {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.info-container .shipping .shipping .content, .info-container .shipping .excludes .content {
+    color: #707070;
+}
+
+.info-container .shipping .delivery-rates table {
+    width: 100%;
+}
+
+.info-container .shipping .delivery-rates table, .info-container .shipping .delivery-rates th, .info-container .shipping .delivery-rates td {
+    border: solid 1px #707070;
+    border-collapse: collapse;
+}
+
+.info-container .shipping .delivery-rates table th {
+    background-color: #707070;
+}
+
+.info-container .shipping .returns table {
+    width: 100%;
+}
+
+.info-container .shipping .returns table th {
+    background-color: #707070;
+}
+
+.info-container .shipping .returns table, .info-container .shipping .returns th, .info-container .shipping .returns td {
+    border: solid 1px #707070;
+    border-collapse: collapse;
+}
+
+.info-container .shipping .payment table {
+    width: 100%;
+}
+
+.info-container .shipping .payment table th {
+    background-color: #707070;
+}
+
+.info-container .shipping .payment table, .info-container .shipping .payment th, .info-container .shipping .payment td {
+    border: solid 1px #707070;
+    border-collapse: collapse;
+}
+
+.info-container .shipping .payment .pay-items {
+    display: flex;
+}
+
+.info-container .shipping .payment .pay-items div {
+    padding: 5px;
+    margin: 5px;
+    border: solid 1px #000000;
+}
+
+.info-container .reviews {
+    margin: 10px;
+    display: flex;
+}
+
+.info-container .reviews .side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-container .reviews .side .stars {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-container .reviews .side .stars > img {
+    width: 120px;
+}
+
+.info-container .reviews .side .stars div {
+    font-size: 20px;
+}
+
+.info-container .reviews .side .quantity {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.68);
+}
+
+.info-container .reviews .side .filter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-container .reviews .side .filter .row {
+    display: flex;
+    gap: 20px;
+    color: #005da1;
+}
+
+.info-container .reviews .side .filter .row:hover {
+    color: rgb(92, 91, 91);
+    cursor: pointer;
+}
+
+.info-container .reviews .side .opinion-btn {
+    margin-top: 20px;
 }

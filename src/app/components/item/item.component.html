@@ -96,8 +96,161 @@
 </div>
 <div class="info-container">
     <mat-tab-group>
-        <mat-tab label="About this item">About this item</mat-tab>
-        <mat-tab label="Shipping, returns & payments">Content 3</mat-tab>
-        <mat-tab label="Reviews"></mat-tab>
+        <mat-tab label="About this item">
+            <div class="about">
+                {{item?.about}}
+            </div>
+        </mat-tab>
+        <mat-tab label="Shipping, returns & payments">
+            <div class="shipping">
+                <div class="container">
+                    <h1>Shipping and handling</h1>
+                    <div class="location">
+                        <div class="title">Item location:</div>
+                        <div class="content">
+                            <b>{{item?.localization}}</b>
+                        </div>
+                    </div>
+                    <div class="shipping">
+                        <div class="title">Ships to:</div>
+                        <div class="content">USA, Worldwide</div>
+                    </div>
+                    <div class="excludes">
+                        <div class="title">Excludes:</div>
+                        <div class="content">USA</div>
+                    </div>
+                    <div class="country">
+                        <div class="title">Change country</div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Select country</mat-label>
+                            <mat-select>
+                                <mat-option value="1">
+                                    1
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <button mat-flat-button color="primary" class="rates">Get rates</button>
+                    </div>
+                    <div class="delivery-rates">
+                        <table>
+                            <tr>
+                                <th>Shipping and handling</th>
+                                <th>To</th>
+                                <th>Service</th>
+                                <th>Delivery</th>
+                            </tr>
+                            <tr>
+                                <td>0.2 ETH</td>
+                                <td>Spain</td>
+                                <td>eBay International Standard Delivery</td>
+                                <td>Estimated delivery time varies</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="container">
+                    <h1>Return policy</h1>
+                    <div class="returns">
+                        <table>
+                            <tr>
+                                <th>Return policy details</th>
+                            </tr>
+                            <tr>
+                                <td>Seller does not accept returns</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="container">
+                    <h1>Payment details</h1>
+                    <div class="payment">
+                        <table>
+                            <tr>
+                                <th>Payment methods</th>
+                            </tr>
+                            <tr>
+                                <td class="pay-items">
+                                    <div>
+                                        ETH
+                                        <img src="">
+                                    </div>
+                                    <div>
+                                        ERC-20
+                                        <img src="">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Reviews">
+            <div class="reviews">
+                <div class="side">
+                    <div class="container">
+                        <h1>Clients opinions</h1>
+                        <div class="stars">
+                            <img *ngIf="medianReview === 5" src="/assets/stars/five-stars.png">
+                            <img *ngIf="medianReview > 4 && medianReview < 5" src="/assets/stars/four-half-stars.png">
+                            <img *ngIf="medianReview === 4" src="/assets/stars/four-stars.png">
+                            <img *ngIf="medianReview > 3 && medianReview < 4" src="/assets/stars/three-half-stars.png">
+                            <img *ngIf="medianReview === 3" src="/assets/stars/three-stars.png">
+                            <img *ngIf="medianReview > 2 && medianReview < 3" src="/assets/stars/two-half-stars.png">
+                            <img *ngIf="medianReview === 2" src="/assets/stars/two-stars.png">
+                            <img *ngIf="medianReview > 1 && medianReview < 2" src="/assets/stars/one-half-stars.png">
+                            <img *ngIf="medianReview === 1" src="/assets/stars/one-stars.png">
+                            <img *ngIf="medianReview > 0 && medianReview < 1" src="/assets/stars/zero-half-stars.png">
+                            <img *ngIf="medianReview === 0" src="/assets/stars/zero-stars.png">
+                            <div>{{medianReview}} of 5</div>
+                        </div>
+                        <div class="quantity">{{reviews.length}} valorations</div>
+                        <div class="filter">
+                            <div class="row">
+                                <div>5 stars</div>
+                                <div>
+                                    <mat-progress-bar mode="determinate" [value]="toPercentage(fiveStarsReviews.length)"></mat-progress-bar>
+                                </div>
+                                <div>{{toPercentage(fiveStarsReviews.length)}}%</div>
+                            </div>
+                            <div class="row">
+                                <div>4 stars</div>
+                                <div>
+                                    <mat-progress-bar mode="determinate" [value]="toPercentage(fourStarsReviews.length)"></mat-progress-bar>
+                                </div>
+                                <div>{{toPercentage(fourStarsReviews.length)}}%</div>
+                            </div>
+                            <div class="row">
+                                <div>3 stars</div>
+                                <div>
+                                    <mat-progress-bar mode="determinate" [value]="toPercentage(threeStarsReviews.length)"></mat-progress-bar>
+                                </div>
+                                <div>{{toPercentage(threeStarsReviews.length)}}%</div>
+                            </div>
+                            <div class="row">
+                                <div>2 stars</div>
+                                <div>
+                                    <mat-progress-bar mode="determinate" [value]="toPercentage(twoStarsReviews.length)"></mat-progress-bar>
+                                </div>
+                                <div>{{toPercentage(twoStarsReviews.length)}}%</div>
+                            </div>
+                            <div class="row">
+                                <div>1 stars</div>
+                                <div>
+                                    <mat-progress-bar mode="determinate" [value]="toPercentage(oneStarsReviews.length)"></mat-progress-bar>
+                                </div>
+                                <div>{{toPercentage(oneStarsReviews.length)}}%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <h1>Value this product</h1>
+                        <div>Share your opinion with other clients</div>
+                        <button mat-stroked-button class="opinion-btn">Write opinion</button>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </mat-tab>
     </mat-tab-group>
 </div>
