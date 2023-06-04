@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IItem } from 'src/app/models/item.object';
+import { IReview } from 'src/app/models/review.object';
 import { MarkdownService } from 'src/app/services/markdown/markdown.service';
 
 @Component({
@@ -17,13 +18,15 @@ export class ItemComponent implements OnInit {
 
   medianReview: number = 4.6;
 
-  reviews: any[] = [];
+  reviews: IReview[] = [];
 
-  oneStarsReviews: any[] = [];
-  twoStarsReviews: any[] = [];
-  threeStarsReviews: any[] = [];
-  fourStarsReviews: any[] = [];
-  fiveStarsReviews: any[] = [];
+  reviewsContent: string[] = [];
+
+  oneStarsReviews: number = 0;
+  twoStarsReviews: number = 0;
+  threeStarsReviews: number = 0;
+  fourStarsReviews: number = 3;
+  fiveStarsReviews: number = 0;
 
   constructor(
     private mdService: MarkdownService
@@ -55,6 +58,33 @@ export class ItemComponent implements OnInit {
       returns: new Date(),
     };
     this.selectedImage = this.item.images[0];
+    this.reviews.push(
+      {
+        seller: '0x00000000000000',
+        title: 'THE feedback',
+        content: 'The BLA BLA BLA',
+        date: new Date(),
+        stars: 4
+      }
+    );
+    this.reviews.push(
+      {
+        seller: '0x00000000000000',
+        title: 'The BLA BLA BLA',
+        content: 'The BLA BLA BLA', 
+        date: new Date(),
+        stars: 4
+      }
+    );
+    this.reviews.push(
+      {
+        title: 'The BLA BLA BLA',
+        seller: '0x00000000000000',
+        content: 'The BLA BLA BLA', 
+        date: new Date(),
+        stars: 4
+      }
+    );
     (async()=> {
       await this.mdService.processMDString(this.item!.description).then((value: string) => {
         return new Promise((resolve, reject) => {
@@ -72,7 +102,7 @@ export class ItemComponent implements OnInit {
   }
 
   toPercentage(count: number): number {
-    return Math.abs(count - this.reviews.length)/this.reviews.length;
+    return (count/this.reviews.length) * 100;
   }
 
 }

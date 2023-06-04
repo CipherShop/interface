@@ -320,6 +320,12 @@
     cursor: pointer;
 }
 
+.info-container .reviews .side .filter .row .progress {
+    width: 80px;
+    display: flex;
+    align-items: center; 
+}
+
 .info-container .reviews .side .opinion-btn {
     margin-top: 20px;
 }

@@ -208,38 +208,38 @@
                         <div class="filter">
                             <div class="row">
                                 <div>5 stars</div>
-                                <div>
-                                    <mat-progress-bar mode="determinate" [value]="toPercentage(fiveStarsReviews.length)"></mat-progress-bar>
+                                <div class="progress">
+                                    <mat-progress-bar mode="determinate" [value]="toPercentage(fiveStarsReviews)"></mat-progress-bar>
                                 </div>
-                                <div>{{toPercentage(fiveStarsReviews.length)}}%</div>
+                                <div>{{toPercentage(fiveStarsReviews)}}%</div>
                             </div>
                             <div class="row">
                                 <div>4 stars</div>
-                                <div>
-                                    <mat-progress-bar mode="determinate" [value]="toPercentage(fourStarsReviews.length)"></mat-progress-bar>
+                                <div class="progress">
+                                    <mat-progress-bar mode="determinate" [value]="toPercentage(fourStarsReviews)"></mat-progress-bar>
                                 </div>
-                                <div>{{toPercentage(fourStarsReviews.length)}}%</div>
+                                <div>{{toPercentage(fourStarsReviews)}}%</div>
                             </div>
                             <div class="row">
                                 <div>3 stars</div>
-                                <div>
-                                    <mat-progress-bar mode="determinate" [value]="toPercentage(threeStarsReviews.length)"></mat-progress-bar>
+                                <div class="progress">
+                                    <mat-progress-bar mode="determinate" [value]="toPercentage(threeStarsReviews)"></mat-progress-bar>
                                 </div>
-                                <div>{{toPercentage(threeStarsReviews.length)}}%</div>
+                                <div>{{toPercentage(threeStarsReviews)}}%</div>
                             </div>
                             <div class="row">
                                 <div>2 stars</div>
-                                <div>
-                                    <mat-progress-bar mode="determinate" [value]="toPercentage(twoStarsReviews.length)"></mat-progress-bar>
+                                <div class="progress">
+                                    <mat-progress-bar mode="determinate" [value]="toPercentage(twoStarsReviews)"></mat-progress-bar>
                                 </div>
-                                <div>{{toPercentage(twoStarsReviews.length)}}%</div>
+                                <div>{{toPercentage(twoStarsReviews)}}%</div>
                             </div>
                             <div class="row">
                                 <div>1 stars</div>
-                                <div>
-                                    <mat-progress-bar mode="determinate" [value]="toPercentage(oneStarsReviews.length)"></mat-progress-bar>
+                                <div class="progress">
+                                    <mat-progress-bar mode="determinate" [value]="toPercentage(oneStarsReviews)"></mat-progress-bar>
                                 </div>
-                                <div>{{toPercentage(oneStarsReviews.length)}}%</div>
+                                <div>{{toPercentage(oneStarsReviews)}}%</div>
                             </div>
                         </div>
                     </div>
@@ -249,7 +249,20 @@
                         <button mat-stroked-button class="opinion-btn">Write opinion</button>
                     </div>
                 </div>
-                <div></div>
+                <div class="content">
+                    <div *ngFor="let reviewContent of reviewsContent; let i = index;" class="review-item">
+                        <div class="author">
+                            {{reviews[i].seller}}
+                        </div>
+                        <div class="title">
+                            {{reviews[i].title}}
+                        </div>
+                        <div class="date">
+                            {{reviews[i].date}}
+                        </div>
+                        <div [innerHTML]="reviewContent" class="inner-content"></div>
+                    </div>
+                </div>
             </div>
         </mat-tab>
     </mat-tab-group>
