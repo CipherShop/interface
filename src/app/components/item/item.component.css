@@ -20,14 +20,22 @@
     margin-top: 0px;
 }
 
+.photos-container .side .image img {
+    max-width: 40px;
+    cursor: pointer;
+}
+
 .photos-container .main {
-    height: 300px;
-    width: 300px;
+    width: 495px;
     margin: 0 20px;
 }
 
+.photos-container .main img {
+    width: 100%;
+}
+
 .description-container {
-    flex: 0 0 500px;
+    flex: 0 0 400px;
     display: flex;
     flex-direction: column;
 }
@@ -49,9 +57,7 @@
 .description-container .condition .description {
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
-
 
 .description-container .condition .title {
     width: 90px;
@@ -67,11 +73,29 @@
     font-weight: 700;
 }
 
+.description-container .options {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.description-container .options .title {
+    width: 90px;
+    text-align: right;
+    font-weight: normal;
+}
+
 .description-container .quantity {
     display: flex;
     gap: 10px;
     margin-top: 20px;
     align-items: center;
+}
+
+.description-container .available {
+    display: flex;
+    gap: 5px;
 }
 
 .description-container .quantity .title {
@@ -103,11 +127,20 @@
     font-weight: normal;
 }
 
+.description-container .price .label {
+    flex: 1 1 auto;
+}
+
 .description-container .price .label .info {
     font-weight: 700;
     font-size: 20px;
     display: flex;
+    align-items: center;
     gap: 5px;
+}
+
+.description-container .price .label .info .logo img {
+    width: 15px;
 }
 
 .description-container .buy {
@@ -118,6 +151,7 @@
 
 .description-container .buy button {
     width: 100%;
+    cursor: pointer;
 }
 
 .description-container .cart {
@@ -128,6 +162,11 @@
 
 .description-container .cart button {
     width: 100%;
+    cursor: pointer;
+}
+
+.disabled {
+    cursor: not-allowed;
 }
 
 .description-container .shipping {
@@ -139,6 +178,7 @@
     width: 90px;
     text-align: right;
     font-weight: normal;
+    flex: 0 0 90px;
 }
 
 .description-container .shipping .label .location {
@@ -171,8 +211,123 @@
     font-weight: normal;
 }
 
+.description-container .payments {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.description-container .payments .title {
+    width: 90px;
+    text-align: right;
+    font-weight: normal;
+}
+
+.description-container .payments .label .info .content {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.description-container .payments .label .info .content img {
+    width: 10px;
+}
+
 .item-container .extra {
     margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item-container .extra .guarantee {
+    padding: 10px;
+    border: solid 1px #000000;
+    border-radius: 4px;
+}
+
+.item-container .extra .guarantee .title {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.item-container .extra .guarantee .description {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.item-container .extra .guarantee .description img {
+    height: 40px;
+}
+
+.item-container .extra .seller {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: solid 1px #000000;
+    border-radius: 4px;
+}
+
+.item-container .extra .seller .title {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.item-container .extra .seller .description {
+    display: flex;
+    cursor: pointer;
+}
+
+.item-container .extra .seller .description .address {
+    color: #005da1;
+}
+
+.item-container .extra .seller .description .stars {
+    display: flex;
+    margin-left: 5px;
+}
+
+.item-container .extra .seller .description .stars .start {
+    display: flex;
+}
+
+.item-container .extra .seller .description .stars .start .number {
+    color: #005da1;
+}
+
+.item-container .extra .seller .description .stars .img img { 
+    width: 20px;
+}
+
+.item-container .extra .seller .feedback {
+    font-size: 12px;
+}
+
+.item-container .extra .seller mat-divider {
+    margin: 10px 0;
+}
+
+.item-container .extra .seller .save button {
+    width: 100%;
+}
+
+.item-container .extra .seller .contact {
+    margin-top: 10px;
+}
+
+.item-container .extra .seller .contact button {
+    width: 100%;
+}
+
+.item-container .extra .seller .store {
+    margin-top: 10px;
+}
+
+.item-container .extra .seller .store button {
+    width: 100%;
 }
 
 .info-container {
@@ -275,6 +430,7 @@
 .info-container .reviews {
     margin: 10px;
     display: flex;
+    gap: 100px;
 }
 
 .info-container .reviews .side {
@@ -328,4 +484,42 @@
 
 .info-container .reviews .side .opinion-btn {
     margin-top: 20px;
+}
+
+.info-container .reviews .content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info-container .reviews .content > h1{
+    margin-bottom: -10px;
+}
+
+.info-container .reviews .content .review-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-container .reviews .content .review-item .author {
+    margin-bottom: 4px;
+}
+
+.info-container .reviews .content .review-item .title {
+    display: flex;
+    align-items: center;
+}
+
+.info-container .reviews .content .review-item .title .stars {
+    margin-right: 5px;
+}
+
+.info-container .reviews .content .review-item .title .stars img {
+    width: 100px;
+}
+
+.info-container .reviews .content .review-item .date {
+    margin-bottom: 4px;
+    color: #565959;
 }

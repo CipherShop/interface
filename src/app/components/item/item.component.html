@@ -1,9 +1,9 @@
 <div class="item-container">
     <div class="photos-container">
         <div class="side">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
+            <div *ngFor="let image of item?.images;" class="image">
+                <img [src]="image" (click)="selectedImage = image;">
+            </div>
         </div>
         <div class="main">
             <img [src]="selectedImage">
@@ -17,19 +17,49 @@
         <div class="condition">
             <div class="title">Condition:</div>
             <div class="description">
-                <div *ngIf="item?.condition === 1" class="label">New</div>
-                <div *ngIf="item?.condition === 2" class="label">Used</div>
-                <div *ngIf="item?.condition === 3" class="label">Old</div>
+                <div *ngIf="item?.condition === 1" class="label">New with tags</div>
+                <div *ngIf="item?.condition === 2" class="label">New without tags</div>
+                <div *ngIf="item?.condition === 3" class="label">New with defects</div>
+                <div *ngIf="item?.condition === 4" class="label">Pre-owned</div>
                 <div class="options">“{{item?.description}}”</div>
             </div>
         </div>
+        <form [formGroup]="optionsFG">
+            <div *ngFor="let option of item?.options;" class="options">
+                <div class="title">{{option.key}}:</div>
+                <div class="options">
+                    <mat-form-field appearance="outline">
+                        <mat-label>{{option.key}}</mat-label>
+                            <mat-select [formControlName]="option.key">
+                                <mat-option *ngFor="let item of option.value" [value]="item">
+                                    {{item}}
+                                </mat-option>
+                            </mat-select>
+                            <!--
+                                <mat-error>Value is required.</mat-error>
+                            -->
+                      </mat-form-field>
+                </div>
+            </div>
+        </form>
         <div class="quantity">
             <div class="title">Quantity:</div>
-            <form>
+            <form [formGroup]="quantityFG">
                 <mat-form-field appearance="outline">
-                    <input matInput value="1">
+                    <input matInput formControlName="quantity"/>
+                    <!--
+                        <mat-error *ngIf="true">Value is required.</mat-error>
+                        <mat-error *ngIf="quantityFG.get('quantity')?.errors?.['required']">Value is required.</mat-error>
+                        <mat-error *ngIf="quantityFG.get('quantity')?.errors?.['minimum']">Value must be equal or minor the quantity.</mat-error>
+                    -->
                 </mat-form-field>
-            </form>              
+            </form>
+            <div *ngIf="item?.options && item?.options!.length > 0 && optionsFG.valid" class="available">
+                <div *ngIf="quantity > 10">More than 10 available</div>
+                <div *ngIf="quantity <= 10">{{quantity}} available</div>
+                <div *ngIf="sold > 0">/</div>
+                <div *ngIf="sold > 0">{{sold}} sold</div>
+            </div>
         </div>
         <div class="divider">
             <mat-divider></mat-divider>
@@ -40,15 +70,17 @@
                 <div class="info">
                     <div>{{item!.prices[item!.prices.length - 1]}}</div>
                     <div *ngIf="!item?.isErc20Price">ETH</div>
-                    <div *ngIf="!item?.isErc20Price">ETH-LOGO</div>
+                    <div *ngIf="!item?.isErc20Price" class="logo">
+                        <img src="assets/logos/ethereum.svg">
+                    </div>
                     <div *ngIf="item?.isErc20Price">GET-ERC20-SYMBOL</div>
-                    <div>ERC20-LINK</div>
+                    <div *ngIf="item?.isErc20Price">ERC20-LINK</div>
                 </div>
                 <div class="buy">
-                    <button mat-raised-button color="primary">Buy</button>
+                    <button mat-raised-button color="primary" [ngClass]="{'disabled': !optionsFG.valid || !quantityFG.valid}" [disabled]="!optionsFG.valid || !quantityFG.valid">Buy</button>
                 </div>
                 <div class="cart">
-                    <button mat-raised-button>Add to cart</button>
+                    <button mat-raised-button [ngClass]="{'disabled': !optionsFG.valid || !quantityFG.valid}" [disabled]="!optionsFG.valid || !quantityFG.valid">Add to cart</button>
                 </div>
             </div>
         </div>
@@ -64,7 +96,7 @@
                     May not ship to Spain.<br>Read item description or contact seller for shipping options.
                 </div>
                 <div class="location">
-                    Located in: {{item?.localization}}
+                    Located in: {{getCountry(item?.localization)}}
                 </div>
             </div>
         </div>
@@ -84,14 +116,55 @@
                 </div>
             </div>
         </div>
-        <div class="payments"></div>
+        <div class="payments">
+            <div class="title">Payments:</div>
+            <div class="label">
+                <div class="info">
+                    <div *ngIf="!item?.isErc20Price" class="content">
+                        <div>ETH</div>
+                        <img src="assets/logos/ethereum.svg">
+                        <a href="google.com" target="_blank">(Smart contract: {{addressFormat('0x464248Efc32c138a29D6E35d3AE1D52Aa7472c49')}})</a>
+                    </div>
+                    <div *ngIf="item?.isErc20Price">ERC-20</div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="extra">
         <div class="guarantee">
             <div class="title">Shop with confidence</div>
-            <div class="description">The money is held by a third-party, in this case, a smart contract, so if you do not get your item, you can get your money back.</div>
+            <div class="description">
+                <img src="assets/icons/warranty.png">
+                <div>Get the item you ordered or your money back.</div>
+            </div>
         </div>
-        <div class="seller"></div>
+        <div class="seller">
+            <div class="title">Seller information</div>
+            <a class="description" [routerLink]="['/user/0x464248Efc32c138a29D6E35d3AE1D52Aa7472c49']">
+                <div class="address">{{addressFormat('0x464248Efc32c138a29D6E35d3AE1D52Aa7472c49')}}</div>
+                <div class="stars">
+                    <div class="start">
+                        <div>(</div>
+                        <div class="number">1000</div>
+                    </div>
+                    <div class="img">
+                        <img src="assets/icons/star.png">
+                    </div>
+                    <div class="end">)</div>
+                </div>
+            </a>
+            <div class="feedback">98.7% positive feedback</div>
+            <mat-divider></mat-divider>
+            <div class="save">
+                <button mat-flat-button color="primary">Save seller</button>
+            </div>
+            <div class="contact">
+                <button mat-flat-button color="primary">Contact seller</button>
+            </div>
+            <div class="store">
+                <button mat-flat-button color="primary">Visit store</button>
+            </div>
+        </div>
     </div>
 </div>
 <div class="info-container">
@@ -250,15 +323,27 @@
                     </div>
                 </div>
                 <div class="content">
+                    <h1>Top reviews</h1>
                     <div *ngFor="let reviewContent of reviewsContent; let i = index;" class="review-item">
                         <div class="author">
                             {{reviews[i].seller}}
                         </div>
                         <div class="title">
-                            {{reviews[i].title}}
+                            <div class="stars">
+                                <img *ngIf="reviews[i].stars === 5" src="/assets/stars/five-stars.png">
+                                <img *ngIf="reviews[i].stars === 4" src="/assets/stars/four-stars.png">
+                                <img *ngIf="reviews[i].stars === 3" src="/assets/stars/three-stars.png">
+                                <img *ngIf="reviews[i].stars === 2" src="/assets/stars/two-stars.png">
+                                <img *ngIf="reviews[i].stars === 1" src="/assets/stars/one-stars.png">
+                            </div>
+                            <div>
+                                <b>
+                                    {{reviews[i].title}}
+                                </b>
+                            </div>
                         </div>
                         <div class="date">
-                            {{reviews[i].date}}
+                            {{dateFormat(reviews[i].date)}}
                         </div>
                         <div [innerHTML]="reviewContent" class="inner-content"></div>
                     </div>

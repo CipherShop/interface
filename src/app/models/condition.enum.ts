@@ -1,5 +1,6 @@
 export enum ECondition {
-    New = 1,
-    Used = 2,
-    Other = 3,
+    'New with tags' = 1,
+    'New without tags' = 2,
+    'New with defects' = 3,
+    'Pre-owned' = 4,
 }
