@@ -73,8 +73,12 @@
                     <div *ngIf="!item?.isErc20Price" class="logo">
                         <img src="assets/logos/ethereum.svg">
                     </div>
-                    <div *ngIf="item?.isErc20Price">GET-ERC20-SYMBOL</div>
-                    <div *ngIf="item?.isErc20Price">ERC20-LINK</div>
+                    <div *ngIf="item?.isErc20Price">
+                        {{erc20Symbol}}
+                    </div>
+                    <a *ngIf="item?.isErc20Price" [href]="'https://etherscan.io/token/' + item?.erc20" target="_blank">
+                        <mat-icon fontIcon="open_in_new"></mat-icon>
+                    </a>
                 </div>
                 <div class="buy">
                     <button mat-raised-button color="primary" [ngClass]="{'disabled': !optionsFG.valid || !quantityFG.valid}" [disabled]="!optionsFG.valid || !quantityFG.valid">Buy</button>
@@ -125,7 +129,13 @@
                         <img src="assets/logos/ethereum.svg">
                         <a href="google.com" target="_blank">(Smart contract: {{addressFormat('0x464248Efc32c138a29D6E35d3AE1D52Aa7472c49')}})</a>
                     </div>
-                    <div *ngIf="item?.isErc20Price">ERC-20</div>
+                    <div *ngIf="item?.isErc20Price" class="erc20">
+                        {{erc20Symbol}}
+                        ERC-20
+                        <a [href]="'https://etherscan.io/token/' + item?.erc20" target="_blank">
+                            <mat-icon fontIcon="open_in_new"></mat-icon>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -243,13 +253,16 @@
                             </tr>
                             <tr>
                                 <td class="pay-items">
-                                    <div>
+                                    <div *ngIf="!item?.isErc20Price" class="eth">
                                         ETH
-                                        <img src="">
+                                        <img src="assets/logos/ethereum.svg">
                                     </div>
-                                    <div>
+                                    <div *ngIf="item?.isErc20Price" class="erc20">
+                                        {{erc20Symbol}}
                                         ERC-20
-                                        <img src="">
+                                        <a [href]="'https://etherscan.io/token/' + item?.erc20" target="_blank">
+                                            <mat-icon fontIcon="open_in_new"></mat-icon>
+                                        </a>
                                     </div>
                                 </td>
                             </tr>

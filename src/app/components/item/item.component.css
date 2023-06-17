@@ -139,6 +139,17 @@
     gap: 5px;
 }
 
+.description-container .price .label .info a {
+    text-decoration: none;
+}
+
+.description-container .price .label .info a mat-icon {
+    font-size: 18px;    
+    color: #444;
+    display: flex;
+    align-items: center;
+}
+
 .description-container .price .label .info .logo img {
     width: 15px;
 }
@@ -231,6 +242,23 @@
 
 .description-container .payments .label .info .content img {
     width: 10px;
+}
+
+.description-container .payments .label .info .erc20 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.description-container .payments .label .info .erc20 a {
+    text-decoration: none;
+}
+    
+.description-container .payments .label .info .erc20 mat-icon {
+    font-size: 18px;    
+    color: #444;
+    display: flex;
+    align-items: center;
 }
 
 .item-container .extra {
@@ -425,6 +453,24 @@
     padding: 5px;
     margin: 5px;
     border: solid 1px #000000;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.info-container .shipping .payment .pay-items .eth img {
+    width: 12px;
+}
+
+.info-container .shipping .payment .pay-items .erc20 a {
+    text-decoration: none;
+}
+
+.info-container .shipping .payment .pay-items .erc20 mat-icon {
+    font-size: 18px;    
+    color: #444;
+    display: flex;
+    align-items: center;
 }
 
 .info-container .reviews {

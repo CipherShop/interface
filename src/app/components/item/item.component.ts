@@ -4,6 +4,7 @@ import { IItem } from 'src/app/models/item.object';
 import { IQuantity } from 'src/app/models/quantity.object';
 import { IReview } from 'src/app/models/review.object';
 import { MarkdownService } from 'src/app/services/markdown/markdown.service';
+import { Web3Service } from 'src/app/services/web3/web3.service';
 import { minimumQuantityValidator } from 'src/app/validators/quantity.validator';
 
 @Component({
@@ -39,8 +40,11 @@ export class ItemComponent implements OnInit {
 
   sold: number = 0;
 
+  erc20Symbol: string = '';
+
   constructor(
     private mdService: MarkdownService,
+    public web3Service: Web3Service,
     private fb: FormBuilder,
   ){
   }
@@ -53,8 +57,8 @@ export class ItemComponent implements OnInit {
       about: 'string',
       seller: 'string',
       prices: [500],
-      isErc20Price: false,
-      erc20: 'string',
+      isErc20Price: true,
+      erc20: '0x547B5362a0aA165cF98237C98cdA5A4003f5cA9F',
       admitBids: false,
       bid: 0,
       bids: [20],
@@ -211,6 +215,13 @@ export class ItemComponent implements OnInit {
         }
       ]
     };
+    if (this.item.isErc20Price) {
+      this.web3Service.getERC20Symbol(this.item.erc20).then((value: string) => {
+        this.erc20Symbol = value;
+      }).catch((err: any) => {
+        console.error(err);
+      });
+    }
     this.quantityFG = this.fb.group({
       quantity: ['', [Validators.required, minimumQuantityValidator(this.quantity)]]
     });
