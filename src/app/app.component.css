@@ -1,0 +1,115 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    gap: 20px;
+}
+
+.header .logo {
+    cursor: pointer;
+}
+
+.header .logo img {
+    width: 60px;
+    height: 60px;
+}
+
+::ng-deep .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+}
+
+.header .search {
+    flex: 1 1 auto;
+    justify-content: center;
+    display: flex;
+}
+
+.header .search form {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.header .search mat-form-field {
+    width: 100%;
+}
+
+.header .profile, .header .cart {
+    cursor: pointer;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    border-left: 1px solid #7d7d7d;
+}
+  
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+  
+.sidenav a:hover {
+    color: #000;
+}
+  
+.sidenav .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+.sidenav .cart-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidenav .cart-item .content {
+    display: flex;
+    padding: 15px 5px 15px 10px;
+    gap: 5px;
+    align-items: center;
+}
+
+.sidenav .cart-item .content .image img {
+    width: 60px;
+}
+
+.sidenav .cart-item .content .data {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 0 0 102px;
+}
+
+.sidenav .cart-item .content .data .title {
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #7d7d7d;
+}
+
+.sidenav .cart-item .content .price {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.sidenav .empty-cart {
+    font-size: 16px;
+    text-align: center;
+}

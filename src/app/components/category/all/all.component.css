@@ -1,0 +1,139 @@
+.main-container {
+    margin: 20px;
+    display: flex;
+}
+
+.side-menu {
+    flex: 0 0 316px;
+}
+
+.side-menu > div {
+    position: fixed;
+}
+
+.side-menu .item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    width: 195px;
+    font-size: 14px;
+    color: #111820;
+}
+
+.side-menu .item .title {
+    color: #111820;
+    flex: 0 0 140px;
+    max-width: 140px;
+    line-height: 1.2;
+    text-decoration: none;
+}
+
+.side-menu .item .title:hover {
+    text-decoration: underline;
+}
+
+.side-menu .item .title.selected {
+    font-weight: 500;
+}
+
+::ng-deep .side-menu .mat-icon {
+    font-size: 20px;
+}
+
+.main-container .categories {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    overflow: hidden;
+}
+
+.main-container .categories .section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 45px;
+}
+
+.main-container .categories .section h1 {
+    font-weight: 500;
+}
+
+.main-container .categories .section h1 a {
+    text-decoration: none;
+    color: #000;
+}
+
+.main-container .categories .section h1 a:hover {
+    text-decoration: underline;
+}
+
+.main-container .categories .section .category-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.main-container .categories .section .category-container .category-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    width: 32%;
+    max-width: 32%;
+    flex: 0 0 32%;
+}
+
+.main-container .categories .section .category-container .category-item .title {
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 16px;
+    height: 2.25rem;
+    color: #000;
+    text-decoration: none;
+}
+
+.main-container .categories .section .category-container .category-item .title:hover {
+    text-decoration: underline;
+}
+
+::ng-deep .category-item .mat-divider {
+    border-top-color: #000;
+    border-top-width: 3px;
+    margin-bottom: 5px;
+}
+
+.main-container .categories .section .category-container .category-item .image {
+    background-color: #FCF2BD;
+    max-width: 300px;
+    max-height: 120px;
+    margin-bottom: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container .categories .section .category-container .category-item .image img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.main-container .categories .section .category-container .category-item .link, .main-container .categories .section .category-container .category-item .more {
+    margin: 17px 0;
+    font-size: 14px;
+}
+
+.main-container .categories .section .category-container .category-item .link a {
+    text-decoration: none;
+    color: #000;
+}
+
+.main-container .categories .section .category-container .category-item .link a:hover {
+    text-decoration: underline;
+}
+
+.main-container .categories .section .category-container .category-item .more a {
+    text-decoration: none;
+    color: #006efc;
+}
+
+.main-container .categories .section .category-container .category-item .more a:hover {
+    text-decoration: underline;
+}

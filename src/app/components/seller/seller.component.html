@@ -1,0 +1,120 @@
+<div class="main-container">
+    <div class="banner">
+        <div class="profile">
+            <img src="">
+        </div>
+        <div class="data">
+            <h1 class="username">
+                {{seller?.username}}
+            </h1>
+            <div class="extra">
+                <div class="info">
+                    <div class="feedback">
+                        {{getFeedbackPercentage()}}
+                         Positive feedback
+                         ({{getFeedbackQuantity()}})
+                    </div>
+                    <div class="sold">
+                        {{seller?.sold}}
+                         Items sold
+                    </div>
+                </div>
+                <div class="actions">
+                    <button mat-button (click)="chatSeller()">
+                        <mat-icon>chat</mat-icon>
+                        Contact
+                    </button>
+                    <button mat-button (click)="saveSeller()">
+                        <mat-icon>favorite</mat-icon>
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content">
+        <mat-tab-group>
+            <mat-tab label="Shop">
+                <div class="tab-container">
+                    <h1 class="title">All items</h1>
+                    <div *ngFor="let item of items; let i = index;" class="item" (click)="selectItem(item.UID)">
+                        <div class="item-image">{{item.images[0]}}</div>
+                        <div class="item-data">
+                            <div class="item-title">{{item.title}}</div>
+                            <div class="item-price">{{item.prices[item.prices.length - 1]}} ETH</div>
+                            <div class="item-shipping">+ {{item.shipping[item.shipping.length -1]}} ETH shipping estimate</div>
+                            <div class="item-location">from Spain</div>
+                            <div class="item-sold">{{item.sold}}</div>
+                        </div>
+                    </div>
+                    <div *ngIf="items.length === 0" class="no-items">
+                        No items available
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="About">
+                <div class="tab-container">
+                    <h1 class="title-2">About</h1>
+                    <div [innerHTML]="aboutContent" class="about"></div>
+                    <div class="location">
+                        <div class="text">Location:</div>
+                        <div class="data">{{getCountry(seller?.location)}}</div>
+                    </div>
+                    <div class="register-date">
+                        <div class="text">Member since:</div>
+                        <div class="data">{{getRegisterDate()}}</div>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Feedback">
+                <div class="tab-container">
+                    <h1 class="title-2">Feedback ratings</h1>
+                    <div class="subtitle">Last 12 months</div>
+                    <div class="number-ratings">
+                        <div class="rating-column">
+                            <div class="title">Positive</div>
+                            <div class="data">{{getPositiveFeedback()}}</div>
+                        </div>
+                        <div class="rating-column">
+                            <div class="title">Neutral</div>
+                            <div class="data">{{getNeutralFeedback()}}</div>
+                        </div>
+                        <div class="rating-column">
+                            <div class="title">Negative</div>
+                            <div class="data">{{getNegativeFeedback()}}</div>
+                        </div>
+                    </div>
+                    <h1 class="feedback-title">
+                        <div>All feedback</div>
+                         <div class="data">({{seller?.feedbacks?.length}})</div>
+                    </h1>
+                    <div *ngFor="let item of seller?.feedbacks; let i = index;" [ngClass]="{'feedback-item': true, 'feedback-item_top': i === 0}">
+                        <div class="header">
+                            <div class="valoration">
+                                <svg *ngIf="item.valoration === 1" viewBox="0 0 23 23" aria-label="Positive feedback rating" role="img">
+                                    <path fill="#05823F" d="M11.017 0C4.935 0 0 4.929 0 11.017c0 6.082 4.935 11.016 11.017 11.016s11.016-4.934 11.016-11.016C22.033 4.929 17.099 0 11.017 0zm7.131 11.665c0 .714-.579 1.296-1.299 1.296h-3.885v3.888c0 .712-.586 1.296-1.299 1.296h-1.299a1.297 1.297 0 0 1-1.293-1.296v-3.888H5.182a1.296 1.296 0 0 1-1.293-1.296v-1.299c0-.713.579-1.296 1.293-1.296h3.891V5.182c0-.713.579-1.295 1.293-1.295h1.299c.713 0 1.299.582 1.299 1.295V9.07h3.884c.719 0 1.299.583 1.299 1.296v1.299h.001z"></path>
+                                </svg>
+                                <svg *ngIf="item.valoration === 0" viewBox="0 0 23 23" aria-label="Neutral feedback rating" role="img">
+                                    <path fill="#6A6A6A" d="M11.016 0C4.933 0 0 4.93 0 11.015 0 17.1 4.932 22.031 11.016 22.031S22.032 17.1 22.032 11.015 17.101 0 11.016 0zm4.131 13.769c0 .76-.617 1.376-1.377 1.376H8.262c-.76 0-1.377-.616-1.377-1.376V8.26c0-.76.616-1.377 1.377-1.377h5.508c.76 0 1.377.617 1.377 1.377v5.509z"></path>
+                                </svg>
+                                <svg *ngIf="item.valoration === -1" viewBox="0 0 22 22" aria-label="Negative feedback rating" role="img">
+                                    <path fill="#E0103A" d="M10.969 0C4.911 0 0 4.911 0 10.969s4.911 10.969 10.969 10.969 10.969-4.91 10.969-10.969C21.938 4.912 17.027 0 10.969 0zm4.113 12.339H6.854a1.37 1.37 0 1 1 0-2.74h8.227a1.37 1.37 0 1 1 0 2.74h.001z"></path>
+                                </svg>
+                            </div>
+                            <div class="user">
+                                {{showAddress(item.user)}}
+                            </div>
+                            <ul class="date">
+                                <li>{{dateFormat(item.date)}}</li>
+                            </ul>
+                        </div>
+                        <div class="content">
+                            {{item.content}}
+                        </div>
+                        <mat-divider></mat-divider>
+                    </div>
+                </div>
+            </mat-tab>
+          </mat-tab-group>          
+    </div>
+</div>

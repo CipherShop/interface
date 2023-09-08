@@ -208,6 +208,7 @@
     width: 90px;
     text-align: right;
     font-weight: normal;
+    flex: 0 0 90px;
 }
 
 .description-container .returns {

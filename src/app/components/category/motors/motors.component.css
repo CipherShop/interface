@@ -1,0 +1,28 @@
+.main-container {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container .top-menu {
+    display: flex;
+    gap: 5px;
+}
+
+::ng-deep .top-menu .mat-icon {
+    font-size: 20px;
+    color: rgb(112, 112, 112);
+}
+
+.main-container .top-menu .link a {
+    color: black;
+    text-decoration: none;
+}
+
+.main-container .top-menu .link a:hover {
+    text-decoration: underline;
+}
+
+.main-container .top-menu .actual {
+    color: rgb(112, 112, 112);
+}

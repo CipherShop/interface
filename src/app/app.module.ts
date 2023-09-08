@@ -9,9 +9,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { ItemComponent } from './components/item/item.component';
+import { SellerComponent } from './components/seller/seller.component';
+import { CategoryComponent } from './components/category/category.component';
+import { MotorsComponent } from './components/category/motors/motors.component';
 
 import { MarkdownService } from './services/markdown/markdown.service';
 import { Web3Service } from './services/web3/web3.service';
+import { CartService } from './services/cart/cart.service';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -21,12 +25,20 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatFormFieldModule } from '@angular/material/form-field'; 
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu'; 
+import { MatBadgeModule } from '@angular/material/badge';
+import { AllComponent } from './components/category/all/all.component';
+import { MatExpansionModule } from '@angular/material/expansion'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    ItemComponent
+    ItemComponent,
+    SellerComponent,
+    CategoryComponent,
+    MotorsComponent,
+    AllComponent
   ],
   imports: [
     BrowserModule,
@@ -43,10 +55,14 @@ import { MatIconModule } from '@angular/material/icon';
     MatProgressBarModule,
     MatFormFieldModule,
     MatIconModule,
+    MatMenuModule,
+    MatBadgeModule,
+    MatExpansionModule
   ],
   providers: [
     MarkdownService,
-    Web3Service
+    Web3Service,
+    CartService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,347 @@
+<div class="main-container">
+    <div class="side-menu">
+        <div>
+            <h1>All Categories</h1>
+            <div class="item">
+                <a [ngClass]="{'title': true , 'selected': categoryView === 0}" [routerLink]="['./']" fragment="motors">Motors</a>
+                <div *ngIf="categoryView === 0">
+                    <mat-icon>check</mat-icon>
+                </div>
+            </div>
+            <div class="item">
+                <a [ngClass]="{'title': true , 'selected': categoryView === 1}" [routerLink]="['./']" fragment="clothing">Clothing, Shoes & Accessories</a>
+                <div *ngIf="categoryView === 1" class="check">
+                    <mat-icon>check</mat-icon>
+                </div>
+            </div>
+            <div class="item">
+                <a [ngClass]="{'title': true , 'selected': categoryView === 2}" [routerLink]="['./']" fragment="sporting">Sporting Goods</a>
+                <div *ngIf="categoryView === 2" class="check">
+                    <mat-icon>check</mat-icon>
+                </div>
+            </div>
+            <div class="item">
+                <a [ngClass]="{'title': true , 'selected': categoryView === 3}" [routerLink]="['./']" fragment="toys">Toys & Hobbies</a>
+                <div *ngIf="categoryView === 3" class="check">
+                    <mat-icon>check</mat-icon>
+                </div>
+            </div>
+            <div class="item">
+                <a [ngClass]="{'title': true , 'selected': categoryView === 4}" [routerLink]="['./']" fragment="home">Home & Garden</a>
+                <div *ngIf="categoryView === 4" class="check">
+                    <mat-icon>check</mat-icon>
+                </div>
+            </div>
+            <div class="item">
+                <a [ngClass]="{'title': true , 'selected': categoryView === 5}" [routerLink]="['./']" fragment="jewelry">Jewelry & Watches</a>
+                <div *ngIf="categoryView === 5" class="check">
+                    <mat-icon>check</mat-icon>
+                </div>
+            </div>
+            <div class="item">
+                <a [ngClass]="{'title': true , 'selected': categoryView === 6}" [routerLink]="['./']" fragment="health">Health & Beauty</a>
+                <div *ngIf="categoryView === 6" class="check">
+                    <mat-icon>check</mat-icon>
+                </div>
+            </div>
+            <div class="item">
+                <a [ngClass]="{'title': true , 'selected': categoryView === 7}" [routerLink]="['./']" fragment="business">Business & Industrial</a>
+                <div *ngIf="categoryView === 7" class="check">
+                    <mat-icon>check</mat-icon>
+                </div>
+            </div>
+            <div class="item">
+                <a [ngClass]="{'title': true , 'selected': categoryView === 8}" [routerLink]="['./']" fragment="pet">Pet Supplies</a>
+                <div *ngIf="categoryView === 8" class="check">
+                    <mat-icon>check</mat-icon>
+                </div>
+            </div>
+            <div class="item">
+                <a [ngClass]="{'title': true , 'selected': categoryView === 9}" [routerLink]="['./']" fragment="baby">Baby Essentials</a>
+                <div *ngIf="categoryView === 9" class="check">
+                    <mat-icon>check</mat-icon>
+                </div>
+            </div>
+            <div class="item">
+                <a [ngClass]="{'title': true , 'selected': categoryView === 10}" [routerLink]="['./']" fragment="electronics">Electronics</a>
+                <div *ngIf="categoryView === 10" class="check">
+                    <mat-icon>check</mat-icon>
+                </div>
+            </div>
+            <div class="item">
+                <a [ngClass]="{'title': true , 'selected': categoryView === 11}" [routerLink]="['./']" fragment="collectibles">Collectibles & Art</a>
+                <div *ngIf="categoryView === 11" class="check">
+                    <mat-icon>check</mat-icon>
+                </div>
+            </div>
+            <div class="item">
+                <a [ngClass]="{'title': true , 'selected': categoryView === 12}" [routerLink]="['./']" fragment="books">Books, Movies & Music</a>
+                <div *ngIf="categoryView === 12" class="check">
+                    <mat-icon>check</mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="categories">
+        <div class="section">
+            <h1 #motors id="motors">
+                <a routerLink="/c/1">Motors</a>
+            </h1>
+            <div class="category-container">
+                <div *ngFor="let category of motorsCategories; let i = index;" class="category-item">
+                    <a class="title" [routerLink]="'/c/1/' + i">{{category.title}}</a>
+                    <mat-divider></mat-divider>
+                    <a [routerLink]="'/c/1/' + i" class="image">
+                        <img [src]="category.image">
+                    </a>
+                    <div *ngFor="let subcategory of category.subcategories; let j = index;" class="link">
+                        <a [routerLink]="'/c/1/' + i + '/' + j">{{subcategory}}</a>
+                    </div>
+                    <div *ngIf="category.more" class="more">
+                        <a [routerLink]="'/c/1/' + i">View all in {{category.title}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h1 #clothing id="clothing">
+                <a routerLink="/c/2">Clothing, Shoes & Accessories</a>
+            </h1>
+            <div class="category-container">
+                <div *ngFor="let category of clothingCategories; let i = index;" class="category-item">
+                    <a class="title" [routerLink]="'/c/2/' + i">{{category.title}}</a>
+                    <mat-divider></mat-divider>
+                    <a [routerLink]="'/c/2/' + i" class="image">
+                        <img [src]="category.image">
+                    </a>
+                    <div *ngFor="let subcategory of category.subcategories; let j = index;" class="link">
+                        <a [routerLink]="'/c/2/' + i + '/' + j">{{subcategory}}</a>
+                    </div>
+                    <div *ngIf="category.more" class="more">
+                        <a [routerLink]="'/c/2/' + i">View all in {{category.title}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h1 #sporting id="sporting">
+                <a routerLink="/c/3">Sporting Goods</a>
+            </h1>
+            <div class="category-container">
+                <div *ngFor="let category of sportingCategories; let i = index;" class="category-item">
+                    <a class="title" [routerLink]="'/c/3/' + i">{{category.title}}</a>
+                    <mat-divider></mat-divider>
+                    <a [routerLink]="'/c/3/' + i" class="image">
+                        <img [src]="category.image">
+                    </a>
+                    <div *ngFor="let subcategory of category.subcategories; let j = index;" class="link">
+                        <a [routerLink]="'/c/3/' + i + '/' + j">{{subcategory}}</a>
+                    </div>
+                    <div *ngIf="category.more" class="more">
+                        <a [routerLink]="'/c/3/' + i">View all in {{category.title}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h1 #toys id="toys">
+                <a routerLink="/c/4">Toys & Hobbies</a>
+            </h1>
+            <div class="category-container">
+                <div *ngFor="let category of toysCategories; let i = index;" class="category-item">
+                    <a class="title" [routerLink]="'/c/4/' + i">{{category.title}}</a>
+                    <mat-divider></mat-divider>
+                    <a [routerLink]="'/c/4/' + i" class="image">
+                        <img [src]="category.image">
+                    </a>
+                    <div *ngFor="let subcategory of category.subcategories; let j = index;" class="link">
+                        <a [routerLink]="'/c/4/' + i + '/' + j">{{subcategory}}</a>
+                    </div>
+                    <div *ngIf="category.more" class="more">
+                        <a [routerLink]="'/c/4/' + i">View all in {{category.title}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h1 #home id="home">
+                <a routerLink="/c/5">Home & Garden</a>
+            </h1>
+            <div class="category-container">
+                <div *ngFor="let category of homeCategories; let i = index;" class="category-item">
+                    <a class="title" [routerLink]="'/c/5/' + i">{{category.title}}</a>
+                    <mat-divider></mat-divider>
+                    <a [routerLink]="'/c/5/' + i" class="image">
+                        <img [src]="category.image">
+                    </a>
+                    <div *ngFor="let subcategory of category.subcategories; let j = index;" class="link">
+                        <a [routerLink]="'/c/5/' + i + '/' + j">{{subcategory}}</a>
+                    </div>
+                    <div *ngIf="category.more" class="more">
+                        <a [routerLink]="'/c/5/' + i">View all in {{category.title}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h1 #jewelry id="jewelry">
+                <a routerLink="/c/6">Jewelry & Watches</a>
+            </h1>
+            <div class="category-container">
+                <div *ngFor="let category of jewelryCategories; let i = index;" class="category-item">
+                    <a class="title" [routerLink]="'/c/6/' + i">{{category.title}}</a>
+                    <mat-divider></mat-divider>
+                    <a [routerLink]="'/c/6/' + i" class="image">
+                        <img [src]="category.image">
+                    </a>
+                    <div *ngFor="let subcategory of category.subcategories; let j = index;" class="link">
+                        <a [routerLink]="'/c/6/' + i + '/' + j">{{subcategory}}</a>
+                    </div>
+                    <div *ngIf="category.more" class="more">
+                        <a [routerLink]="'/c/6/' + i">View all in {{category.title}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h1 #health id="health">
+                <a routerLink="/c/7">Health & Beauty</a>
+            </h1>
+            <div class="category-container">
+                <div *ngFor="let category of healthCategories; let i = index;" class="category-item">
+                    <a class="title" [routerLink]="'/c/7/' + i">{{category.title}}</a>
+                    <mat-divider></mat-divider>
+                    <a [routerLink]="'/c/7/' + i" class="image">
+                        <img [src]="category.image">
+                    </a>
+                    <div *ngFor="let subcategory of category.subcategories; let j = index;" class="link">
+                        <a [routerLink]="'/c/7/' + i + '/' + j">{{subcategory}}</a>
+                    </div>
+                    <div *ngIf="category.more" class="more">
+                        <a [routerLink]="'/c/7/' + i">View all in {{category.title}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h1 #business id="business">
+                <a routerLink="/c/8">Business & Industrial</a>
+            </h1>
+            <div class="category-container">
+                <div *ngFor="let category of businessCategories; let i = index;" class="category-item">
+                    <a class="title" [routerLink]="'/c/8/' + i">{{category.title}}</a>
+                    <mat-divider></mat-divider>
+                    <a [routerLink]="'/c/8/' + i" class="image">
+                        <img [src]="category.image">
+                    </a>
+                    <div *ngFor="let subcategory of category.subcategories; let j = index;" class="link">
+                        <a [routerLink]="'/c/8/' + i + '/' + j">{{subcategory}}</a>
+                    </div>
+                    <div *ngIf="category.more" class="more">
+                        <a [routerLink]="'/c/8/' + i">View all in {{category.title}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h1 #pet id="pet">
+                <a routerLink="/c/9">Pet Supplies</a>
+            </h1>
+            <div class="category-container">
+                <div *ngFor="let category of petCategories; let i = index;" class="category-item">
+                    <a class="title" [routerLink]="'/c/9/' + i">{{category.title}}</a>
+                    <mat-divider></mat-divider>
+                    <a [routerLink]="'/c/9/' + i" class="image">
+                        <img [src]="category.image">
+                    </a>
+                    <div *ngFor="let subcategory of category.subcategories; let j = index;" class="link">
+                        <a [routerLink]="'/c/9/' + i + '/' + j">{{subcategory}}</a>
+                    </div>
+                    <div *ngIf="category.more" class="more">
+                        <a [routerLink]="'/c/9/' + i">View all in {{category.title}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h1 #baby id="baby">
+                <a routerLink="/c/10">Baby Essentials</a>
+            </h1>
+            <div class="category-container">
+                <div *ngFor="let category of babyCategories; let i = index;" class="category-item">
+                    <a class="title" [routerLink]="'/c/10/' + i">{{category.title}}</a>
+                    <mat-divider></mat-divider>
+                    <a [routerLink]="'/c/10/' + i" class="image">
+                        <img [src]="category.image">
+                    </a>
+                    <div *ngFor="let subcategory of category.subcategories; let j = index;" class="link">
+                        <a [routerLink]="'/c/10/' + i + '/' + j">{{subcategory}}</a>
+                    </div>
+                    <div *ngIf="category.more" class="more">
+                        <a [routerLink]="'/c/10/' + i">View all in {{category.title}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h1 #electronics id="electronics">
+                <a routerLink="/c/11">Electronics</a>
+            </h1>
+            <div class="category-container">
+                <div *ngFor="let category of electronicsCategories; let i = index;" class="category-item">
+                    <a class="title" [routerLink]="'/c/11/' + i">{{category.title}}</a>
+                    <mat-divider></mat-divider>
+                    <a [routerLink]="'/c/11/' + i" class="image">
+                        <img [src]="category.image">
+                    </a>
+                    <div *ngFor="let subcategory of category.subcategories; let j = index;" class="link">
+                        <a [routerLink]="'/c/11/' + i + '/' + j">{{subcategory}}</a>
+                    </div>
+                    <div *ngIf="category.more" class="more">
+                        <a [routerLink]="'/c/11/' + i">View all in {{category.title}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h1 #collectibles id="collectibles">
+                <a routerLink="/c/12">Collectibles & Art</a>
+            </h1>
+            <div class="category-container">
+                <div *ngFor="let category of collectiblesCategories; let i = index;" class="category-item">
+                    <a class="title" [routerLink]="'/c/12/' + i">{{category.title}}</a>
+                    <mat-divider></mat-divider>
+                    <a [routerLink]="'/c/12/' + i" class="image">
+                        <img [src]="category.image">
+                    </a>
+                    <div *ngFor="let subcategory of category.subcategories; let j = index;" class="link">
+                        <a [routerLink]="'/c/12/' + i + '/' + j">{{subcategory}}</a>
+                    </div>
+                    <div *ngIf="category.more" class="more">
+                        <a [routerLink]="'/c/12/' + i">View all in {{category.title}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h1 #books id="books">
+                <a routerLink="/c/13">Books, Movies & Music</a>
+            </h1>
+            <div class="category-container">
+                <div *ngFor="let category of booksCategories; let i = index;" class="category-item">
+                    <a class="title" [routerLink]="'/c/13/' + i">{{category.title}}</a>
+                    <mat-divider></mat-divider>
+                    <a [routerLink]="'/c/13/' + i" class="image">
+                        <img [src]="category.image">
+                    </a>
+                    <div *ngFor="let subcategory of category.subcategories; let j = index;" class="link">
+                        <a [routerLink]="'/c/13/' + i + '/' + j">{{subcategory}}</a>
+                    </div>
+                    <div *ngIf="category.more" class="more">
+                        <a [routerLink]="'/c/13/' + i">View all in {{category.title}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

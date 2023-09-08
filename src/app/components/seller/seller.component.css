@@ -1,0 +1,212 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container .banner {
+    padding: 20px;
+    background-color: #f7f7f7;
+    display: flex;
+    gap: 36px;
+}
+
+.main-container .banner .profile img {
+    width: 96px;
+    height: 96px;
+    border-radius: 100%;
+    background-color: black;
+}
+
+.main-container .banner .data {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1 1 auto;
+}
+
+.main-container .banner .data .username {
+    margin: 10px 0 0;
+    max-width: 100%;
+    font-size: 30px;
+    line-height: 35px;
+    color: #191919;
+    text-decoration: none;
+}
+
+.main-container .banner .data .extra {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.main-container .banner .data .extra .info {
+    display: flex;
+    gap: 20px;
+}
+
+.main-container .banner .data .extra .info .sold, .main-container .banner .data .extra .info .feedback {
+    font-size: .875rem;
+    font-weight: 700;
+}
+
+.main-container .banner .data .extra .actions {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.main-container .tab-content .tab-container {
+    padding: 20px;
+}
+
+.main-container .tab-content .tab-container .title {
+    margin-bottom: 64px;
+    font-size: 1.25rem;
+}
+
+.main-container .tab-content .tab-container .title-2 {
+    margin-bottom: 16px;
+    font-size: 1.25rem;
+}
+
+.main-container .tab-content .tab-container .no-items {
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.main-container .tab-content .tab-container .item {
+    max-width: 300px;
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: solid 1px #000000;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.main-container .tab-content .tab-container .item-image {
+    height: 100px;
+}
+
+.main-container .tab-content .tab-container .item-data {
+    padding: 10px;
+}
+
+.main-container .tab-content .tab-container .item-title {
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.main-container .tab-content .tab-container .item-price {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.main-container .tab-content .tab-container .about {
+    margin-bottom: 48px;
+}
+
+.main-container .tab-content .tab-container .location, .main-container .tab-content .tab-container .register-date {
+    display: flex;
+    gap: 5px;
+}
+
+.main-container .tab-content .tab-container .location .text, .main-container .tab-content .tab-container .register-date .text {
+    color: #707070;
+    font-size: .875rem;
+    line-height: 24px;
+}
+
+.main-container .tab-content .tab-container .location .data, .main-container .tab-content .tab-container .register-date .data {
+    font-size: .875rem;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+.main-container .tab-content .tab-container .subtitle {
+    margin-bottom: 16px;
+    color: #707070;
+    font-size: .875rem;
+    margin: 0 0 1rem;
+    font-weight: 500;
+}
+
+.main-container .tab-content .tab-container .number-ratings {
+    display: flex;
+    gap: 50px;
+    padding-bottom: 1rem;
+}
+
+.main-container .tab-content .tab-container .number-ratings .rating-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container .tab-content .tab-container .number-ratings .rating-column .title {
+    padding-bottom: .5rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    font-size: small;
+}
+
+.main-container .tab-content .tab-container .number-ratings .rating-column .data {
+    font-weight: 700;
+}
+
+.main-container .tab-content .tab-container .feedback-title {
+    font-size: 1.25rem;
+    color: #111820;
+    font-weight: 400;
+    margin-bottom: 1em;
+    display: flex;
+    gap: 5px;
+}
+
+.main-container .tab-content .tab-container .feedback-title .data {
+    font-weight: 100;
+    color: #707070;
+}
+
+.main-container .tab-content .tab-container .feedback-item {
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+}
+
+.main-container .tab-content .tab-container .feedback-item_top {
+    padding-top: 0;
+}
+
+.main-container .tab-content .tab-container .feedback-item .header {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 16px;
+}
+
+.main-container .tab-content .tab-container .feedback-item .header .valoration {
+    height: 20px;
+    width: 20px;
+}
+
+.main-container .tab-content .tab-container .feedback-item .header .user {
+    font-size: 12px;
+    color: #707070;
+}
+
+.main-container .tab-content .tab-container .feedback-item .header .date {
+    font-size: 12px;
+    color: #707070;
+    margin: 0;
+    padding-left: 15px;
+}
+
+.main-container .tab-content .tab-container .feedback-item .content {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    padding-bottom: 16px;
+}

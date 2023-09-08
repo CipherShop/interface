@@ -84,7 +84,7 @@
                     <button mat-raised-button color="primary" [ngClass]="{'disabled': !optionsFG.valid || !quantityFG.valid}" [disabled]="!optionsFG.valid || !quantityFG.valid">Buy</button>
                 </div>
                 <div class="cart">
-                    <button mat-raised-button [ngClass]="{'disabled': !optionsFG.valid || !quantityFG.valid}" [disabled]="!optionsFG.valid || !quantityFG.valid">Add to cart</button>
+                    <button mat-raised-button [ngClass]="{'disabled': !optionsFG.valid || !quantityFG.valid}" [disabled]="!optionsFG.valid || !quantityFG.valid" (click)="addItemToCart()">Add to cart</button>
                 </div>
             </div>
         </div>
@@ -108,7 +108,7 @@
             <div class="title">Delivery:</div>
             <div class="label">
                 <div class="info">
-                    Varies
+                    Estimated between Fri, Jul 28 and, Fri Aug 11 to 28224
                 </div>
             </div>
         </div>
@@ -172,7 +172,7 @@
                 <button mat-flat-button color="primary">Contact seller</button>
             </div>
             <div class="store">
-                <button mat-flat-button color="primary">Visit store</button>
+                <button mat-flat-button color="primary" (click)="goToUser()">Visit store</button>
             </div>
         </div>
     </div>
@@ -191,7 +191,7 @@
                     <div class="location">
                         <div class="title">Item location:</div>
                         <div class="content">
-                            <b>{{item?.localization}}</b>
+                            <b>{{getCountry(item?.localization)}}</b>
                         </div>
                     </div>
                     <div class="shipping">
@@ -339,7 +339,7 @@
                     <h1>Top reviews</h1>
                     <div *ngFor="let reviewContent of reviewsContent; let i = index;" class="review-item">
                         <div class="author">
-                            {{reviews[i].seller}}
+                            {{addressFormat(reviews[i].seller)}}
                         </div>
                         <div class="title">
                             <div class="stars">

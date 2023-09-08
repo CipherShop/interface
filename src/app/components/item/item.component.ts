@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { IItem } from 'src/app/models/item.object';
 import { IQuantity } from 'src/app/models/quantity.object';
 import { IReview } from 'src/app/models/review.object';
+import { CartService } from 'src/app/services/cart/cart.service';
 import { MarkdownService } from 'src/app/services/markdown/markdown.service';
 import { Web3Service } from 'src/app/services/web3/web3.service';
 import { minimumQuantityValidator } from 'src/app/validators/quantity.validator';
@@ -46,6 +48,8 @@ export class ItemComponent implements OnInit {
     private mdService: MarkdownService,
     public web3Service: Web3Service,
     private fb: FormBuilder,
+    private router: Router,
+    public cartService: CartService
   ){
   }
 
@@ -297,6 +301,12 @@ export class ItemComponent implements OnInit {
     });
   }
 
+  addItemToCart(): void {
+    if (this.item) {
+      this.cartService.addItem(this.item);
+    }
+  }
+
   changeSelectedImage(index: number): void {
     this.selectedImage = this.item!.images[index];
   }
@@ -528,6 +538,12 @@ export class ItemComponent implements OnInit {
     let start = address.substring(0,6);
     let end = address.substring(address.length-4);
     return start + '....' + end;
+  }
+
+  goToUser(): void {
+    if (this.item) {
+      this.router.navigate(['/user/' + this.item.seller]);
+    }
   }
 
   getCountry(c: number | undefined): string {

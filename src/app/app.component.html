@@ -1,1 +1,72 @@
+<div class="header">
+    <div class="logo" (click)="goHome()">
+        <img src="assets/logos/ciphershop_logo_800x800_original_round.png">
+    </div>
+    <div class="categories">
+        <form [formGroup]="categoryForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Shop by category</mat-label>
+                <mat-select formControlName="category" (selectionChange)="selectCategory($event)">
+                    <mat-option *ngFor="let category of categories;" [value]="category">
+                        {{category}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+    </div>
+    <div class="search">
+        <form [formGroup]="searchForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Search</mat-label>
+                <input matInput formControlName="search">
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+        </form>
+    </div>
+    <div class="profile">
+        <button mat-icon-button [matMenuTriggerFor]="profileMenu">
+            <mat-icon>account_circle</mat-icon>
+        </button>
+        <mat-menu #profileMenu="matMenu" xPosition="before">
+            <button mat-menu-item>My account</button>
+            <button mat-menu-item>My orders</button>
+            <button mat-menu-item>Watchlist</button>
+            <button mat-menu-item>Saved sellers</button>
+            <button mat-menu-item>Messages</button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item>Logout</button>
+        </mat-menu>
+    </div>
+    <div class="cart">
+        <button mat-icon-button (click)="openNav()">
+            <mat-icon [matBadge]="cart.length" matBadgeColor="warn" [matBadgeHidden]="hiddenCartBadge">shopping_cart</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="sidenav" #sidenav>
+    <a class="close-btn" (click)="closeNav()">&times;</a>
+    <div *ngFor="let item of cart; let i = index;" class="cart-item" (mouseover)="removeCartItem[i] = true;" (mouseout)="removeCartItem[i] = false;">
+        <div class="content">
+            <div class="image">
+                <img [src]="item.images[0]">
+            </div>
+            <div class="data">
+                <div class="title" [title]="item.title">{{item.title}}</div>
+            </div>
+            <div *ngIf="!removeCartItem[i]" class="price">
+                <div *ngIf="!item.isErc20Price">{{item.prices[item.prices.length - 1]}} ETH</div>
+                <div *ngIf="item.isErc20Price">{{item.prices[item.prices.length - 1]}} CSHOP</div>
+            </div>
+            <div *ngIf="removeCartItem[i]" class="delete-item">
+                <button mat-icon-button color="warn" (click)="deleteCartItem(i)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+    </div>
+    <div *ngIf="cart.length === 0" class="empty-cart">
+        Your cart is empty
+    </div>
+</div>
 <router-outlet></router-outlet>

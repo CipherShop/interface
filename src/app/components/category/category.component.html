@@ -1,0 +1,188 @@
+<ng-container *ngIf="category === 0 && subcategory < 0">
+    <app-all></app-all>
+</ng-container>
+<ng-container *ngIf="category === 1 && subcategory < 0">
+    <app-motors></app-motors>
+</ng-container>
+<ng-container *ngIf="category === 2 && subcategory < 0">
+    Clothing, Shoes & Accesories
+</ng-container>
+<ng-container *ngIf="category === 3 && subcategory < 0">
+    Sporting Goods
+</ng-container>
+<ng-container *ngIf="category === 4 && subcategory < 0">
+    Toys & Hobbies
+</ng-container>
+<ng-container *ngIf="category === 5 && subcategory < 0">
+    Home & Garden
+</ng-container>
+<ng-container *ngIf="category === 6 && subcategory < 0">
+    Jewelry & Watches
+</ng-container>
+<ng-container *ngIf="category === 7 && subcategory < 0">
+    Health & Beauty
+</ng-container>
+<ng-container *ngIf="category === 8 && subcategory < 0">
+    Business & Industrial
+</ng-container>
+<ng-container *ngIf="category === 9 && subcategory < 0">
+    Pet Supplies
+</ng-container>
+<ng-container *ngIf="category === 10 && subcategory < 0">
+    Baby Essentials
+</ng-container>
+<ng-container *ngIf="category === 11 && subcategory < 0">
+    Electronics
+</ng-container>
+<ng-container *ngIf="category === 12 && subcategory < 0">
+    Collectibles & Art
+</ng-container>
+<ng-container *ngIf="category === 13 && subcategory < 0">
+    Books, Movies & Music
+</ng-container>
+<ng-container *ngIf="category === 0 && subcategory >= 0">
+    NADA -> REDIRECCION
+</ng-container>
+<ng-container *ngIf="category === 1 && subcategory >= 0">
+    <ng-container *ngIf="subcategory === 0">Auto Parts & Accesories</ng-container>
+    <ng-container *ngIf="subcategory === 1">Other Vehicles & Trailers</ng-container>
+    <ng-container *ngIf="subcategory === 2">Motorcycles</ng-container>
+    <ng-container *ngIf="subcategory === 3">Automotive Tools & Supplies</ng-container>
+    <ng-container *ngIf="subcategory === 4">Powersport Vehicles</ng-container>
+    <ng-container *ngIf="subcategory === 5">Boats</ng-container>
+</ng-container>
+<ng-container *ngIf="category === 2 && subcategory >= 0">
+    <ng-container *ngIf="subcategory === 0">Men's Clothing, Shoes & Accessories</ng-container>
+    <ng-container *ngIf="subcategory === 1">Women's Clothing, Shoes & Accessories</ng-container>
+    <ng-container *ngIf="subcategory === 2">Specialty Clothing, Shoes & Accessories</ng-container>
+    <ng-container *ngIf="subcategory === 3">Kid's Clothing, Shoes & Accessories</ng-container>
+    <ng-container *ngIf="subcategory === 4">Travel Luggage</ng-container>
+    <ng-container *ngIf="subcategory === 5">Baby Clothing, Shoes & Accessories</ng-container>
+</ng-container>
+<ng-container *ngIf="category === 3 && subcategory >= 0">
+    <ng-container *ngIf="subcategory === 0">Sports Memorabilia, Fan Shop & Sports Cards</ng-container>
+    <ng-container *ngIf="subcategory === 1">Hunting Equipment</ng-container>
+    <ng-container *ngIf="subcategory === 2">Golf Equipment</ng-container>
+    <ng-container *ngIf="subcategory === 3">Cycling Equipment</ng-container>
+    <ng-container *ngIf="subcategory === 4">Outdoor Sports</ng-container>
+    <ng-container *ngIf="subcategory === 5">Fishing Equipment & Supplies</ng-container>
+    <ng-container *ngIf="subcategory === 6">Team Sports</ng-container>
+    <ng-container *ngIf="subcategory === 7">Camping & Hiking Equipment</ng-container>
+    <ng-container *ngIf="subcategory === 8">Fitness, Running & Yoga Equipment</ng-container>
+    <ng-container *ngIf="subcategory === 9">Water Sports</ng-container>
+    <ng-container *ngIf="subcategory === 10">Winter Sports</ng-container>
+    <ng-container *ngIf="subcategory === 11">Indoor Games</ng-container>
+</ng-container>
+<ng-container *ngIf="category === 4 && subcategory >= 0">
+    <ng-container *ngIf="subcategory === 0">Action Figures & Accessories</ng-container>
+    <ng-container *ngIf="subcategory === 1">Collectible Card Games & Accessories</ng-container>
+    <ng-container *ngIf="subcategory === 2">Video Games</ng-container>
+    <ng-container *ngIf="subcategory === 3">Diecast & Toy Vehicles</ng-container>
+    <ng-container *ngIf="subcategory === 4">Games</ng-container>
+    <ng-container *ngIf="subcategory === 5">Building Toys</ng-container>
+    <ng-container *ngIf="subcategory === 6">RC Model Vehicles, Toys & Control Line</ng-container>
+    <ng-container *ngIf="subcategory === 7">Model Trains</ng-container>
+    <ng-container *ngIf="subcategory === 8">Toy Models & Kits</ng-container>
+    <ng-container *ngIf="subcategory === 9">Preschool Toys & Pretend Play</ng-container>
+    <ng-container *ngIf="subcategory === 10">Stuffed Animals</ng-container>
+    <ng-container *ngIf="subcategory === 11">Vintage & Antique Toys</ng-container>
+    <ng-container *ngIf="subcategory === 12">Outdoor Toys & Structures</ng-container>
+    <ng-container *ngIf="subcategory === 13">Beanbag Plushies</ng-container>
+</ng-container>
+<ng-container *ngIf="category === 5 && subcategory >= 0">
+    <ng-container *ngIf="subcategory === 0">Home Décor</ng-container>
+    <ng-container *ngIf="subcategory === 1">Yard, Garden & Outdoor Living Items</ng-container>
+    <ng-container *ngIf="subcategory === 2">Kitchen, Dinig & Bar Supplies</ng-container>
+    <ng-container *ngIf="subcategory === 3">Tools & Workshop Equipment</ng-container>
+    <ng-container *ngIf="subcategory === 4">Home Furniture</ng-container>
+    <ng-container *ngIf="subcategory === 5">Home Improvement</ng-container>
+    <ng-container *ngIf="subcategory === 6">Major Appliances, Parts & Accessories</ng-container>
+    <ng-container *ngIf="subcategory === 7">Household & Cleaning Supplies</ng-container>
+    <ng-container *ngIf="subcategory === 8">Bedding</ng-container>
+    <ng-container *ngIf="subcategory === 9">Lamps, Lightning & Ceiling Fans</ng-container>
+    <ng-container *ngIf="subcategory === 10">Surveillance & Smart Home Electronics</ng-container>
+    <ng-container *ngIf="subcategory === 11">Food Beverages</ng-container>
+    <ng-container *ngIf="subcategory === 12">Bathroom Fixtures, Accessories & Supplies</ng-container>
+    <ng-container *ngIf="subcategory === 13">Greeting Cards & Party Supplies</ng-container>
+    <ng-container *ngIf="subcategory === 14">Candles & Home Fragrance</ng-container>
+    <ng-container *ngIf="subcategory === 15">Rugs & Carpets</ng-container>
+    <ng-container *ngIf="subcategory === 16">Holiday & Seasonal Décor</ng-container>
+</ng-container>
+<ng-container *ngIf="category === 6 && subcategory >= 0">
+    <ng-container *ngIf="subcategory === 0">Watches, Parts & Accessories</ng-container>
+    <ng-container *ngIf="subcategory === 1">Fine Jewelry</ng-container>
+    <ng-container *ngIf="subcategory === 2">Fashion Jewelry</ng-container>
+    <ng-container *ngIf="subcategory === 3">Vintage & Antique Jewelry</ng-container>
+    <ng-container *ngIf="subcategory === 4">Men's Jewelry</ng-container>
+    <ng-container *ngIf="subcategory === 5">Loose Diamonds & Gemstones</ng-container>
+    <ng-container *ngIf="subcategory === 6">Engagement & Wedding Jewelry</ng-container>
+    <ng-container *ngIf="subcategory === 7">Ethnic, Regional & Tribal Jewelry</ng-container>
+</ng-container>
+<ng-container *ngIf="category === 7 && subcategory >= 0">
+    <ng-container *ngIf="subcategory === 0">Fragrances</ng-container>
+    <ng-container *ngIf="subcategory === 1">Hair Care & Styling Products</ng-container>
+    <ng-container *ngIf="subcategory === 2">Skin Care Products</ng-container>
+    <ng-container *ngIf="subcategory === 3">Vitamins & Lifestyle Supplements</ng-container>
+    <ng-container *ngIf="subcategory === 4">Makeup Products</ng-container>
+    <ng-container *ngIf="subcategory === 5">Health Care Products</ng-container>
+    <ng-container *ngIf="subcategory === 6">Medical & Mobility</ng-container>
+    <ng-container *ngIf="subcategory === 7">Vision Care Products</ng-container>
+    <ng-container *ngIf="subcategory === 8">Shaving & Hair Removal Products</ng-container>
+    <ng-container *ngIf="subcategory === 9">Bath & Body Products</ng-container>
+    <ng-container *ngIf="subcategory === 10">Manicure, Pedicure & Nail Care Products</ng-container>
+    <ng-container *ngIf="subcategory === 11">Natural & Alternative Remedies</ng-container>
+    <ng-container *ngIf="subcategory === 12">Oral Care Products</ng-container>
+</ng-container>
+<ng-container *ngIf="category === 8 && subcategory >= 0">
+    <ng-container *ngIf="subcategory === 0">Heavy Equipment, Parts & Attachments</ng-container>
+    <ng-container *ngIf="subcategory === 1">Healthcare, Lab & Dental</ng-container>
+    <ng-container *ngIf="subcategory === 2">Restaurant & Food Service</ng-container>
+    <ng-container *ngIf="subcategory === 3">CNC, Metalworking & Manufacturing</ng-container>
+    <ng-container *ngIf="subcategory === 4">Office Equipment & Supplies</ng-container>
+    <ng-container *ngIf="subcategory === 5">Industrial Automation & Motion Controls</ng-container>
+    <ng-container *ngIf="subcategory === 6">Electrical Equipment & Supplies</ng-container>
+    <ng-container *ngIf="subcategory === 7">Light Industrial Equipment & Tools</ng-container>
+    <ng-container *ngIf="subcategory === 8">Test, Measurement & Inspection Equipment</ng-container>
+    <ng-container *ngIf="subcategory === 9">Hydraulics, Pneumatics, Pumps & Plumbing</ng-container>
+    <ng-container *ngIf="subcategory === 10">Material Handling</ng-container>
+    <ng-container *ngIf="subcategory === 11">Facility Maintenance & Safety</ng-container>
+    <ng-container *ngIf="subcategory === 12">Agriculture & Forestry Equipment</ng-container>
+</ng-container>
+<ng-container *ngIf="category === 9 && subcategory >= 0">
+    <ng-container *ngIf="subcategory === 0">Dog Supplies</ng-container>
+    <ng-container *ngIf="subcategory === 1">Fish & Aquariums</ng-container>
+</ng-container>
+<ng-container *ngIf="category === 10 && subcategory >= 0">
+    <ng-container *ngIf="subcategory === 0">Baby Clothing, Shoes & Accessories</ng-container>
+</ng-container>
+<ng-container *ngIf="category === 11 && subcategory >= 0">
+    <ng-container *ngIf="subcategory === 0">Computers, Tablets & Network Hardware</ng-container>
+    <ng-container *ngIf="subcategory === 1">Cell Phones, Smart Watches & Accessories</ng-container>
+    <ng-container *ngIf="subcategory === 2">Video Games & Consoles</ng-container>
+    <ng-container *ngIf="subcategory === 3">Cameras & Photo</ng-container>
+    <ng-container *ngIf="subcategory === 4">TV, Video & Home Audio Electronics</ng-container>
+    <ng-container *ngIf="subcategory === 5">Vehicle Electronics & GPS</ng-container>
+    <ng-container *ngIf="subcategory === 6">Portable Audio & Headphones</ng-container>
+    <ng-container *ngIf="subcategory === 7">Major Appliances, Parts & Accessories</ng-container>
+    <ng-container *ngIf="subcategory === 8">Surveillance & Smart Home Electronics</ng-container>
+    <ng-container *ngIf="subcategory === 9">Home Surveillance Systems</ng-container>
+</ng-container>
+<ng-container *ngIf="category === 12 && subcategory >= 0">
+    <ng-container *ngIf="subcategory === 0">Collectibles</ng-container>
+    <ng-container *ngIf="subcategory === 1">Sports Memorabilia, Fan Shop & Sports Cards</ng-container>
+    <ng-container *ngIf="subcategory === 2">Coins & Paper Money</ng-container>
+    <ng-container *ngIf="subcategory === 3">Antiques</ng-container>
+    <ng-container *ngIf="subcategory === 4">Dolls & Teddy Bears</ng-container>
+    <ng-container *ngIf="subcategory === 5">Art & Craft Supplies</ng-container>
+    <ng-container *ngIf="subcategory === 6">Art</ng-container>
+    <ng-container *ngIf="subcategory === 7">Pottery & Glass</ng-container>
+    <ng-container *ngIf="subcategory === 8">Entertainment Memorabilia</ng-container>
+    <ng-container *ngIf="subcategory === 9">Vintage & Antique Jewelry</ng-container>
+    <ng-container *ngIf="subcategory === 10">Stamps</ng-container>
+</ng-container>
+<ng-container *ngIf="category === 13 && subcategory >= 0">
+    <ng-container *ngIf="subcategory === 0">Books & Magazines</ng-container>
+    <ng-container *ngIf="subcategory === 1">Musical Instrument & Gear</ng-container>
+    <ng-container *ngIf="subcategory === 2">Music</ng-container>
+    <ng-container *ngIf="subcategory === 3">Movies & TV</ng-container>a
+</ng-container>
