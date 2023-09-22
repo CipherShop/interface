@@ -8,9 +8,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 })
 export class CategoryComponent implements OnInit {
 
-  category: number = -1;
-  subcategory: number = -1;
-  section: number = -1;
+  category: string = '';
 
   constructor(
     private router: Router,
@@ -23,17 +21,8 @@ export class CategoryComponent implements OnInit {
       if (!category) {
         this.router.navigate(['/']);
       } else {
-        this.category = parseInt(category);
+        this.category = category;
       }
-      let subcategory = params.get('subcategory');
-      if(subcategory) {
-        this.subcategory = parseInt(subcategory);
-      }
-      let section = params.get('section');
-      if(section) {
-        this.section = parseInt(section);
-      }
-      console.log('C:'+this.category + ',S:' + this.subcategory + ',S3:' + this.section);
     });
   }
 

@@ -23,14 +23,6 @@ const routes: Routes = [
     component: CategoryComponent
   },
   {
-    path: 'c/:category/:subcategory',
-    component: CategoryComponent
-  },
-  {
-    path: 'c/:category/:subcategory/:section',
-    component: CategoryComponent
-  },
-  {
     path: '**',
     pathMatch: 'full',
     redirectTo: ''
