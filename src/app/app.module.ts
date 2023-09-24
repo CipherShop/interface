@@ -214,6 +214,18 @@ import { ATVSideBySideUTVTappetsLiftersComponent } from './components/category/m
 import { ATVSideBySideUTVValveGuidesSpringsPartsComponent } from './components/category/motors/auto-parts-accessories/atv-side-by-side-utv-parts-accessories/ATV-Side-by-Side-UTV-Engines-Engine-Parts/ATV-Side-by-Side-UTV-Valvetrain-Components/atv-side-by-side-utv-valve-guides-springs-parts/atv-side-by-side-utv-valve-guides-springs-parts.component';
 import { ATVSideBySideUTVVariableValveTimingPartsComponent } from './components/category/motors/auto-parts-accessories/atv-side-by-side-utv-parts-accessories/ATV-Side-by-Side-UTV-Engines-Engine-Parts/ATV-Side-by-Side-UTV-Valvetrain-Components/atv-side-by-side-utv-variable-valve-timing-parts/atv-side-by-side-utv-variable-valve-timing-parts.component';
 import { OtherATVSideBySideUTVEnginePartsComponent } from './components/category/motors/auto-parts-accessories/atv-side-by-side-utv-parts-accessories/ATV-Side-by-Side-UTV-Engines-Engine-Parts/other-atv-side-by-side-utv-engine-parts/other-atv-side-by-side-utv-engine-parts.component';
+import { ATVSideBySideUTVExhaustEmissionSystemsComponent } from './components/category/motors/auto-parts-accessories/atv-side-by-side-utv-parts-accessories/atv-side-by-side-utv-exhaust-emission-systems/atv-side-by-side-utv-exhaust-emission-systems.component';
+import { ATVSideBySideUTVCatalyticConvertersDieselParticulateFiltersComponent } from './components/category/motors/auto-parts-accessories/atv-side-by-side-utv-parts-accessories/ATV-Side-by-Side-UTV-Exhaust-Emission-Systems/atv-side-by-side-utv-catalytic-converters-diesel-particulate-filters/atv-side-by-side-utv-catalytic-converters-diesel-particulate-filters.component';
+import { ATVSideBySideUTVClampsFlangesHangersHardwareComponent } from './components/category/motors/auto-parts-accessories/atv-side-by-side-utv-parts-accessories/ATV-Side-by-Side-UTV-Exhaust-Emission-Systems/atv-side-by-side-utv-clamps-flanges-hangers-hardware/atv-side-by-side-utv-clamps-flanges-hangers-hardware.component';
+import { ATVSideBySideUTVEVAPComponentsComponent } from './components/category/motors/auto-parts-accessories/atv-side-by-side-utv-parts-accessories/ATV-Side-by-Side-UTV-Exhaust-Emission-Systems/atv-side-by-side-utv-evap-components/atv-side-by-side-utv-evap-components.component';
+import { ATVSideBySideUTVExhaustGasketsSealsComponent } from './components/category/motors/auto-parts-accessories/atv-side-by-side-utv-parts-accessories/ATV-Side-by-Side-UTV-Exhaust-Emission-Systems/atv-side-by-side-utv-exhaust-gaskets-seals/atv-side-by-side-utv-exhaust-gaskets-seals.component';
+import { ATVSideBySideUTVExhaustPipesTipsComponent } from './components/category/motors/auto-parts-accessories/atv-side-by-side-utv-parts-accessories/ATV-Side-by-Side-UTV-Exhaust-Emission-Systems/atv-side-by-side-utv-exhaust-pipes-tips/atv-side-by-side-utv-exhaust-pipes-tips.component';
+import { ATVSideBySideUTVExhaustSystemKitsComponent } from './components/category/motors/auto-parts-accessories/atv-side-by-side-utv-parts-accessories/ATV-Side-by-Side-UTV-Exhaust-Emission-Systems/atv-side-by-side-utv-exhaust-system-kits/atv-side-by-side-utv-exhaust-system-kits.component';
+import { ATVSideBySideUTVHeatShieldsWrapsComponent } from './components/category/motors/auto-parts-accessories/atv-side-by-side-utv-parts-accessories/ATV-Side-by-Side-UTV-Exhaust-Emission-Systems/atv-side-by-side-utv-heat-shields-wraps/atv-side-by-side-utv-heat-shields-wraps.component';
+import { ATVSideBySideUTVManifoldsHeadersComponent } from './components/category/motors/auto-parts-accessories/atv-side-by-side-utv-parts-accessories/ATV-Side-by-Side-UTV-Exhaust-Emission-Systems/atv-side-by-side-utv-manifolds-headers/atv-side-by-side-utv-manifolds-headers.component';
+import { ATVSideBySideUTVOxygenSensorsComponent } from './components/category/motors/auto-parts-accessories/atv-side-by-side-utv-parts-accessories/ATV-Side-by-Side-UTV-Exhaust-Emission-Systems/atv-side-by-side-utv-oxygen-sensors/atv-side-by-side-utv-oxygen-sensors.component';
+import { ATVSideBySideUTVSilencersMufflersBafflesComponent } from './components/category/motors/auto-parts-accessories/atv-side-by-side-utv-parts-accessories/ATV-Side-by-Side-UTV-Exhaust-Emission-Systems/atv-side-by-side-utv-silencers-mufflers-baffles/atv-side-by-side-utv-silencers-mufflers-baffles.component';
+import { OtherATVSideBySideUTVExhaustEmissionSystemPartsComponent } from './components/category/motors/auto-parts-accessories/atv-side-by-side-utv-parts-accessories/ATV-Side-by-Side-UTV-Exhaust-Emission-Systems/other-atv-side-by-side-utv-exhaust-emission-system-parts/other-atv-side-by-side-utv-exhaust-emission-system-parts.component';
 
 @NgModule({
   declarations: [
@@ -408,6 +420,18 @@ import { OtherATVSideBySideUTVEnginePartsComponent } from './components/category
     ATVSideBySideUTVValveGuidesSpringsPartsComponent,
     ATVSideBySideUTVVariableValveTimingPartsComponent,
     OtherATVSideBySideUTVEnginePartsComponent,
+    ATVSideBySideUTVExhaustEmissionSystemsComponent,
+    ATVSideBySideUTVCatalyticConvertersDieselParticulateFiltersComponent,
+    ATVSideBySideUTVClampsFlangesHangersHardwareComponent,
+    ATVSideBySideUTVEVAPComponentsComponent,
+    ATVSideBySideUTVExhaustGasketsSealsComponent,
+    ATVSideBySideUTVExhaustPipesTipsComponent,
+    ATVSideBySideUTVExhaustSystemKitsComponent,
+    ATVSideBySideUTVHeatShieldsWrapsComponent,
+    ATVSideBySideUTVManifoldsHeadersComponent,
+    ATVSideBySideUTVOxygenSensorsComponent,
+    ATVSideBySideUTVSilencersMufflersBafflesComponent,
+    OtherATVSideBySideUTVExhaustEmissionSystemPartsComponent,
   ],
   imports: [
     BrowserModule,
