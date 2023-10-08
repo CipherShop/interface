@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
 import { ItemComponent } from './components/item/item.component';
 import { SellerComponent } from './components/seller/seller.component';
-import { CategoryComponent } from './components/category/category.component';
 
 const routes: Routes = [
   {
@@ -19,8 +18,8 @@ const routes: Routes = [
     component: SellerComponent
   },
   {
-    path: 'c/:category',
-    component: CategoryComponent
+    path: 'c',
+    loadChildren: () => import('./components/category/category.module').then(m => m.AppCategoryModule)
   },
   {
     path: '**',
