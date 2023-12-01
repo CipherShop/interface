@@ -1,0 +1,150 @@
+.main-container {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container .top-menu {
+    display: flex;
+    gap: 5px;
+    margin: 16px 0;
+}
+
+::ng-deep .top-menu .mat-icon {
+    font-size: 20px;
+    color: rgb(112, 112, 112);
+}
+
+.main-container .top-menu .link a {
+    color: black;
+    text-decoration: none;
+}
+
+.main-container .top-menu .link a:hover {
+    text-decoration: underline;
+}
+
+.main-container .top-menu .actual {
+    color: rgb(112, 112, 112);
+}
+
+.main-container .title h1 {
+    display: -webkit-box;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 2.25rem;
+    line-height: normal;
+    font-weight: 700;
+}
+
+.main-container .content-container {
+    display: flex;
+}
+
+.main-container .content-container .side-menu {
+    flex: 0 0 316px;
+    padding-right: 15px;
+    display: flex;
+}
+
+.main-container .content-container .side-menu > div {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 316px;
+}
+
+.main-container .content-container .side-menu h2 {
+    font-size: .875rem;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.main-container .content-container .side-menu ul {
+    padding: 0;
+    margin: 0;
+    padding-right: 15px;
+    position: relative;
+    left: 15px;
+    list-style: none;
+}
+
+.main-container .content-container .side-menu li {
+    padding: 8px 0 0 0;
+    color: #363636;
+}
+
+.main-container .content-container .side-menu li.main {
+    position: relative;
+    left: -15px;
+} 
+
+.main-container .content-container .side-menu li.actual {
+    font-weight: bold;
+}
+
+.main-container .content-container .side-menu li a {
+    color: #363636;
+    text-decoration: none;
+}
+
+.main-container .content-container .side-menu li.main a:hover, .main-container .content-container .side-menu li.secondary a:hover {
+    text-decoration: underline;
+}
+
+.main-container .content-container .content {
+    flex: 1 1 auto;
+}
+
+.main-container .content-container .categories, .main-container .content-container .makes, .main-container .content-container .makes-link {
+    display: flex;
+    flex-direction: column;
+    margin: 24px 0 0;
+}
+
+.main-container .content-container .categories h2, .main-container .content-container .makes h2, .main-container .content-container .makes-link h2 {
+    font-weight: 700;
+    margin: 0;
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+}
+
+.main-container .content-container .categories .items, .main-container .content-container .makes .items, .main-container .content-container .makes-link .items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 8px;
+}
+
+.main-container .content-container .categories .items .item, .main-container .content-container .makes .items .item {
+    text-align: center;
+    margin: 0 15px;
+    margin-bottom: 24px;
+    width: 20%;
+    position: relative;
+    color: #363636;
+    text-decoration: none;
+}
+
+.main-container .content-container .makes-link .items .item {
+    padding-right: 16px;
+    padding-bottom: 8px;
+    flex: 1 0 23%;
+    max-width: 23%;
+    color: #363636;
+    text-decoration: none;
+}
+
+.main-container .content-container .categories .items a.item:hover, .main-container .content-container .makes .items a.item:hover, .main-container .content-container .makes-link .items a.item:hover {
+    text-decoration: underline;
+}
+
+.main-container .content-container .categories .items .item img, .main-container .content-container .makes .items .item img {
+    margin: auto;
+    min-width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
